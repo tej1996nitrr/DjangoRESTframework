@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets,permissions
 from .models import Language,Paradigm,Programmer
 from .serializers import LanguageSerializer,ParadigmSerializer,ProgrammerSerializer
 # Create your views here.
@@ -12,6 +12,8 @@ It take cares of which methods to use like get,post put etc
 class LanguageView(viewsets.ModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
+    permisssion_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
 
 class ParadigmView(viewsets.ModelViewSet):
     queryset = Paradigm.objects.all()

@@ -18,5 +18,16 @@ language has manytomany relationship with programmer class
 12. Make serializers for paradigm and programmer
 13. make views for paradigm and progrmmer
 14. register views
+15.add login path('api/auth',include('rest_framework.urls')) in api.urls.py
+16.add REST_FRAMEWORK ={
+    'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.IsAuthenticatedOrReadOnly',)   
+} in settings.py 
+17.add authentication:    'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework_simplejwt.authentication.JWTAuthentication',)
+18. import from rest_framework_simplejwt.views import TokenObtainPairView,TokenObtainSlidingView,TokenRefreshView
+pair token=> acces token+refresh token whrn access token expires , we use refesh token to get new access token
+19.create 2 new urls one to get token and one to refresh
+20. Go to api/token endpoint in postman and  give username and pwd in "form-encoded" as key value pair
+output will be axxess token and a refresh Token
+
 
 

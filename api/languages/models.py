@@ -24,3 +24,4 @@ class Programmer(models.Model):
     username: administrator
     pwd : admin'''
 
+'''admin,fox'''
