@@ -7,7 +7,7 @@ from .serializers import LanguageSerializer,ParadigmSerializer,ProgrammerSeriali
 '''to handle all types of requests
 Instead of defining everything explicitly we inherit the model viewset and it will take care of those things
 The only thing we need to specify is how to get an object from the database
-    
+It take cares of which methods to use like get,post put etc
 '''
 class LanguageView(viewsets.ModelViewSet):
     queryset = Language.objects.all()

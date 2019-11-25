@@ -23,15 +23,15 @@ class LanguageSerializer(serializers.HyperlinkedModelSerializer):#shows informat
     class Meta:
         #necessary specifications
         model = Language
-        fields='__all__'
+        fields=('id','url','paradigm','name')
         '''This will translate json into our model '''
 class ParadigmSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Paradigm
-        fields ='__all__'
+        fields =('id','url','name')
 
 class ProgrammerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Programmer
-        fields='__all__'
+        fields=('id','url','languages','name')
 
